@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 //import logo from './logo.svg';
 import './App.css';
+import config from './config';
 import Flat from './components/flat';
 import Marker from './components/marker';
 
@@ -50,6 +51,7 @@ class App extends Component {
       lat : 48.8566,
       lng : 2.3522
     }
+    let APIkey = config.SECRET_KEY;
 
     if (this.state.selectedFlat) {
       center = {
@@ -79,7 +81,7 @@ class App extends Component {
         </div>
         <div className = "map">
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyBIy9M1GCDpQmZJ2bigdp-oYNuXVgc-0y4' }}
+          bootstrapURLKeys={{ key: APIkey }}
           center = {center}
           zoom = {11}
         >
