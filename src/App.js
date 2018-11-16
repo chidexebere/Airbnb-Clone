@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 //import logo from './logo.svg';
 import './App.css';
-import config from './config';
 import Flat from './components/flat';
 import Marker from './components/marker';
+
+const APIkey=`${process.env.REACT_APP_API_KEY}`;
+
 
 class App extends Component {
   constructor(props) {
@@ -51,7 +53,7 @@ class App extends Component {
       lat : 48.8566,
       lng : 2.3522
     }
-    let APIkey = config.SECRET_KEY;
+    
 
     if (this.state.selectedFlat) {
       center = {
